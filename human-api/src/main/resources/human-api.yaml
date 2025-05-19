@@ -1,0 +1,44 @@
+openapi: 3.0.1
+info:
+  title: Human Simulation API
+  version: 1.0.0
+
+paths:
+  /api/humans:
+    get:
+      summary: List all humans
+      operationId: getAllHumans
+      responses:
+        '200':
+          description: human list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Human'
+#    post:
+#      summary: Ajoute un humain
+#      operationId: addHuman
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/Human'
+#      responses:
+#        '200':
+#          description: Humain ajouté
+
+components:
+  schemas:
+    Human:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+      required:
+        - firstName
+        - lastName
