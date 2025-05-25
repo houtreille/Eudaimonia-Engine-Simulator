@@ -32,13 +32,43 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
 
+        <!-- Monitoring & logging -->
+<!--        <dependency>-->
+<!--            <groupId>net.logstash.logback</groupId>-->
+<!--            <artifactId>logstash-logback-encoder</artifactId>-->
+<!--            <version>7.4</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Metrics - Micrometer -->
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <!-- Tracing - Micrometer Tracing + OpenTelemetry -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-otel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-otlp</artifactId>
         </dependency>
 
 
@@ -89,6 +119,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Database -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -103,11 +140,11 @@
                     <testSource>21</testSource>
                     <testTarget>21</testTarget>
                     <annotationProcessorPaths>
-<!--                        <path>-->
-<!--                            <groupId>org.mapstruct</groupId>-->
-<!--                            <artifactId>mapstruct-processor</artifactId>-->
-<!--                            <version>${org.mapstruct.version}</version>-->
-<!--                        </path>-->
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
