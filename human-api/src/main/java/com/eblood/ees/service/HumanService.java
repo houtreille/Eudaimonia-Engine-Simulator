@@ -1,20 +1,24 @@
 package com.eblood.ees.service;
 
+import com.eblood.ees.mapper.HumanMapper;
 import com.eblood.ees.model.Human;
+import com.eblood.ees.model.repository.HumanRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Stream;
 
+@AllArgsConstructor
 @Service
 public class HumanService {
 
+    HumanRepository humanRepository;
+    HumanMapper mapper;
+
     public List<Human> getAllHumans() {
-        return List.of(
-                Human.builder().firstName("John").lastName("Doe").build(),
-                Human.builder().firstName("Jane").lastName("Doe").build(),
-                Human.builder().firstName("Jim").lastName("Beam").build(),
-                Human.builder().firstName("Jack").lastName("Daniels").build()
-        );
+
+        var humanEntities = humanRepository.findAll();
+
+        return mapper.mapEntities(humanEntities);
     }
 }
