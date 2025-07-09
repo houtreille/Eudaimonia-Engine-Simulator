@@ -41,3 +41,10 @@ The attributes are the properties of the human, while the relationships are the 
 
 
 ## frontend
+
+## Run in dev environment
+
+```bash
+ colima start --cpu 4 --memory 8 --disk 64 --arch aarch64 --vm-type=vz --vz-rosetta
+```
+

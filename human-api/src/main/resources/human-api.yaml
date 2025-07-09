@@ -3,9 +3,15 @@ info:
   title: Human Simulation API
   version: 1.0.0
 
+
+tags:
+  - name: Human
+
 paths:
   /api/humans:
     get:
+      tags:
+        - Human
       summary: List all humans
       operationId: getAllHumans
       responses:
@@ -17,18 +23,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Human'
-#    post:
-#      summary: Ajoute un humain
-#      operationId: addHuman
-#      requestBody:
-#        required: true
-#        content:
-#          application/json:
-#            schema:
-#              $ref: '#/components/schemas/Human'
-#      responses:
-#        '200':
-#          description: Humain ajouté
+    post:
+      tags:
+        - Human
+      summary: add a new human
+      operationId: addHuman
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Human'
+      responses:
+        '200':
+          description: Human added
 
 components:
   schemas:
@@ -39,6 +47,9 @@ components:
           type: string
         lastName:
           type: string
+        birthDate:
+          type: string
+          format: date
       required:
         - firstName
         - lastName

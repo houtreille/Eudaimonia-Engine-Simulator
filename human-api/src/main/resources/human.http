@@ -1,3 +1,16 @@
 ### GET request to example server
 GET http://localhost:8666/api/humans
 Accept: application/json
+
+
+
+### Create a new human
+POST http://localhost:8666/api/humans
+Accept: application/json
+Content-Type: application/json
+
+{
+    "firstName": "Opportunity TEST",
+    "lastName": "INFLOW",
+    "birthDate" : "2025-01-01"
+}

@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.57
+    ports:
+      - "6831:6831/udp"        # pour le protocole UDP utilisé par OpenTelemetry
+      - "16686:16686"          # UI Jaeger
+      - "14268:14268"          # endpoint pour envoyer les traces via HTTP (OTLP/HTTP)
+      - "4317:4317"            # OTLP gRPC
+      - "4318:4318"            # OTLP HTTP

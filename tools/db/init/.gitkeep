@@ -1,0 +1,2 @@
+# Ce dossier contient les scripts d'initialisation de la base de données
+# Les fichiers .sql placés ici seront exécutés automatiquement au démarrage du conteneur 
