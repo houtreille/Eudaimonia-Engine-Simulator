@@ -10,7 +10,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "firstName": "Opportunity TEST 2",
-    "lastName": "INFLOW 2",
-    "birthDate" : "2025-01-02"
+  "firstName": "Opportunity TEST 2",
+  "lastName": "INFLOW 2",
+  "birthDate" : "2025-01-02"
 }

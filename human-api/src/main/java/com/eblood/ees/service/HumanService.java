@@ -5,6 +5,7 @@ import com.eblood.ees.model.domain.HumanData;
 import com.eblood.ees.model.repository.HumanRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.NativeWebRequest;
 
 import java.util.List;
 
