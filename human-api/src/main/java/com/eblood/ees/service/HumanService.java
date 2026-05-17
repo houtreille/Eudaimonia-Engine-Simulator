@@ -21,7 +21,8 @@ public class HumanService {
     }
 
 
-    public void addHuman(HumanData human) {
-        humanRepository.save(mapper.mapData(human));
+    public HumanData addHuman(HumanData human) {
+        var entity = humanRepository.save(mapper.mapData(human));
+        return mapper.mapEntity(entity);
     }
 }

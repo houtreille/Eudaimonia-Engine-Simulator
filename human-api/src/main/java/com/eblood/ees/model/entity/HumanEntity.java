@@ -11,7 +11,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "HUMAN", schema = "EES")
+@Table(name = "HUMAN")
 @Data
 public class HumanEntity {
 

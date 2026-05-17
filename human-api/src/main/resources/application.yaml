@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5435/eudaimonia_db
+    url: jdbc:postgresql://localhost:5436/eudaimonia_engine_db
     username: eudaimonia_user
-    password: password
+    password: eudaimonia_password
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,21 +14,33 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-otel:
-  sampler:
-    probability: 1.0
-  exporter:
-    otlp:
-      endpoint: http://localhost:4318
-      protocol: http/protobuf
-  logs:
-    exporter: none
-  traces:
-    exporter: otlp
-  metrics:
-    exporter: none
-  service:
-    name: human-api
+#  kafka:
+#    bootstrap-servers: 172.16.161.76:31094,172.16.161.75:31095,172.16.161.74:31096
+#    # kafka.one.pictet.aws:9093
+#    consumer:
+#      group-id: xcr.public.contacts.all.event.v1
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+#otel:
+#  sampler:
+#    probability: 1.0
+#  exporter:
+#    otlp:
+#      endpoint: http://localhost:4318
+#      protocol: http/protobuf
+#  logs:
+#    exporter: none
+#  traces:
+#    exporter: otlp
+#  metrics:
+#    exporter: none
+#  service:
+#    name: human-api
 
 
 management:
