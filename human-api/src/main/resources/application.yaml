@@ -13,6 +13,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  ai:
+    mcp:
+      server:
+        name: eudaimonia-engine-mcp
+        version: 0.0.1
+        type: SYNC
+        protocol: STREAMABLE
+
 
 #  kafka:
 #    bootstrap-servers: 172.16.161.76:31094,172.16.161.75:31095,172.16.161.74:31096

@@ -14,7 +14,7 @@ public class HumanApiApplication {
     }
 
     @Bean
-    public ToolCallbackProvider outboxMcpToolCallbacks(HumanMcpTools outboxMcpTools) {
-        return MethodToolCallbackProvider.builder().toolObjects(outboxMcpTools).build();
+    public ToolCallbackProvider outboxMcpToolCallbacks(HumanMcpTools humanMcpTools) {
+        return MethodToolCallbackProvider.builder().toolObjects(humanMcpTools).build();
     }
 }
