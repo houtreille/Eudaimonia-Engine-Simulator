@@ -1,7 +1,10 @@
 package com.eblood.ees.model.entity;
 
+import com.eblood.ees.model.domain.Gender;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,4 +28,7 @@ public class HumanEntity {
     private String lastName;
     @Column(name = "BIRTH_DATE", nullable = false)
     private LocalDate birthDate;
+    @Column(name = "GENDER", nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 }
